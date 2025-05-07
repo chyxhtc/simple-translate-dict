@@ -10,3 +10,12 @@
 
 ## 原项目
 本项目基于Simple Translate开发，保留了原有的翻译功能。
+
+## 新增功能页面
+原始翻译功能
+![image](https://github.com/user-attachments/assets/36342d01-73c9-4f71-8b5e-cc1103bb59ed)
+
+新增字典查询与发音
+![image](https://github.com/user-attachments/assets/d7c4709b-b8b8-4ab7-9d40-5c7a64be172f)
+
+目前仅自用，未解决字典查询依赖 API KEY 的问题。
