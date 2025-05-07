@@ -11,6 +11,8 @@
 ## 原项目
 本项目基于Simple Translate开发，保留了原有的翻译功能。
 
+https://github.com/sienori/simple-translate
+
 ## 新增功能页面
 
  > 目前仅自用，未解决字典查询依赖 API KEY 的问题。
