@@ -1,0 +1,818 @@
+{
+  "extName": {
+    "message": "Simple Translate"
+  },
+  "extDescription": {
+    "message": "ترجمة النص المحدد أو المكتوب بسرعة على صفحات الويب. يدعم ترجمة جوجل و DeepL API."
+  },
+  "donateWithPaypalLabel": {
+    "message": "تبرع بواسطة PayPal"
+  },
+  "donateLabel": {
+    "message": "تبرع"
+  },
+  "enableOnThisPage": {
+    "message": "فعل الترجمة على هذه الصفحة"
+  },
+  "disableOnThisPage": {
+    "message": "عطل الترجمة على هذه الصفحة"
+  },
+  "initialTextArea": {
+    "message": "أدخل النص"
+  },
+  "showLink": {
+    "message": "ترجم هذه الصفحة"
+  },
+  "openInGoogleLabel": {
+    "message": "فتح في ترجمة جوجل"
+  },
+  "openInDeeplLabel": {
+    "message": "فتح في مترجم DeepL"
+  },
+  "copyLabel": {
+    "message": "نسخ"
+  },
+  "copiedLabel": {
+    "message": "تم النسخ."
+  },
+  "listenLabel": {
+    "message": "استماع"
+  },
+  "targetLangLabel": {
+    "message": "اللغة المراد الترجمة إليها"
+  },
+  "allLangLabel": {
+    "message": "كل اللغات"
+  },
+  "recentLangLabel": {
+    "message": "اللغات المستخدمة مؤخرًا"
+  },
+  "settingsLabel": {
+    "message": "الإعدادات"
+  },
+  "generalLabel": {
+    "message": "عام"
+  },
+  "translationApiLabel": {
+    "message": "محرك الترجمة"
+  },
+  "googleApiLabel": {
+    "message": "ترجمة جوجل API"
+  },
+  "googleApiCaptionLabel": {
+    "message": "استخدم Google Translate API. لا يلزم التسجيل."
+  },
+  "deeplApiLabel": {
+    "message": "DeepL API\n"
+  },
+  "deeplApiCaptionLabel": {
+    "message": "استخدم DeepL API. يجب عليك التسجيل في DeepL API Free أو DeepL API Pro للحصول على مفتاح المصادقة."
+  },
+  "howToUseDeeplLabel": {
+    "message": "كيفية تسجيل DeepL API"
+  },
+  "deeplPlanLabel": {
+    "message": "خطة DeepL API"
+  },
+  "deeplPlanCaptionLabel": {
+    "message": "حدد خطة DeepL API التي قمت بالتسجيل فيها."
+  },
+  "deeplFreeLabel": {
+    "message": "DeepL API مجاني"
+  },
+  "deeplProLabel": {
+    "message": "DeepL API Pro"
+  },
+  "deeplAuthKeyLabel": {
+    "message": "مصادقة المفاتيح"
+  },
+  "deeplAuthKeyCaptionLabel": {
+    "message": "أدخل مفتاح المصادقة لواجهة برمجة تطبيقات DeepL."
+  },
+  "targetLangCaptionLabel": {
+    "message": "حدد اللغة الافتراضية."
+  },
+  "webPageLabel": {
+    "message": "صفحة الويب"
+  },
+  "ifShowCandidateLabel": {
+    "message": "عرض مرشحي للترجمة"
+  },
+  "ifShowCandidateCaptionLabel": {
+    "message": "عرض مرشحي الترجمة عند ترجمة كلمة واحدة."
+  },
+  "whenSelectTextLabel": {
+    "message": "السلوك عند اختيار النص"
+  },
+  "ifAutoTranslateLabel": {
+    "message": "عرض لوحة الترجمة"
+  },
+  "ifAutoTranslateCaptionLabel": {
+    "message": "عرض لوحة الترجمة مباشرة بدون عرض الزر."
+  },
+  "ifShowButtonLabel": {
+    "message": "عرض زر الترجمة"
+  },
+  "ifShowButtonCaptionLabel": {
+    "message": "عرض زر الترجمة لفتح اللوحة عند الضغط عليها."
+  },
+  "dontshowbuttonlabel": {
+    "message": "لا تعرض الزر او اللوحة"
+  },
+  "dontshowbuttonCaptionlabel": {
+    "message": "لا تظهر زر الترجمة أو لوحة الترجمة."
+  },
+  "ifCheckLangLabel": {
+    "message": "لا تظهر الزر اذا كانت الترجمة غير مطلوبة"
+  },
+  "ifCheckLangCaptionLabel": {
+    "message": "تحديد لغة النص المحدد, واذا كان نفس اللغة الهدف, لن يظهر زر الترجمة."
+  },
+  "ifChangeSecondLangOnPageCaptionLabel": {
+    "message": "اكتشاف لغة النص المحدد، فإن كانت نفس لغة الترجمة الإفتراضية، ترجمة النص للغة الثانية."
+  },
+  "disableTranslationLabel": {
+    "message": "تعطيل الترجمة"
+  },
+  "isDisabledInTextFieldsLabel": {
+    "message": "تعطيل الترجمة في حقول النص"
+  },
+  "isDisabledInTextFieldsCaptionLabel": {
+    "message": "لا تعرض زر أو لوحة الترجمة عند اختيار النص في حقل نص."
+  },
+  "isDisabledInCodeElementLabel": {
+    "message": "تعطيل الترجمة لعناصر الشفرة البرمجية"
+  },
+  "isDisabledInCodeElementCaptionLabel": {
+    "message": "لا تعرض زر أو لوحة الترجمة عندما يكون النص المحدد عنصر شفرة برمجية."
+  },
+  "ifOnlyTranslateWhenModifierKeyPressedLabel": {
+    "message": "ترجم عند الضغط على مفتاح التعديل"
+  },
+  "ifOnlyTranslateWhenModifierKeyPressedCaptionLabel": {
+    "message": "عرض الترجمة فقط عند الضغط على مفتاح التعديل المحدد."
+  },
+  "modifierKeyLabel": {
+    "message": "مفتاح التعديل"
+  },
+  "shiftLabel": {
+    "message": "Shift"
+  },
+  "ctrlLabel": {
+    "message": "Ctrl"
+  },
+  "altLabel": {
+    "message": "Alt"
+  },
+  "cmdLabel": {
+    "message": "Command"
+  },
+  "disableUrlListLabel": {
+    "message": "قائمة عناوين لتعطيل الترجمة"
+  },
+  "disableUrlListCaptionLabel": {
+    "message": "إذا تطابق عنوان الصفحة مع القائمة ، فإن الترجمة على صفحة الويب تعطل. تسمح القائمة بالرمز \"*\"."
+  },
+  "toolbarLabel": {
+    "message": "شريط أدوات منبثق"
+  },
+  "ifChangeSecondLangLabel": {
+    "message": "التبديل تلقائياً إلى اللغة الثانية"
+  },
+  "ifChangeSecondLangCaptionLabel": {
+    "message": "تحديد لغة النص المدخل، وإذا كان نفس اللغة المستهدفة الافتراضية، ترجمها إلى اللغة الثانية."
+  },
+  "secondTargetLangLabel": {
+    "message": "اللغة الثانية"
+  },
+  "secondTargetLangCaptionLabel": {
+    "message": "أخر لغة الهدف الثانية."
+  },
+  "ignoredDocumentLangLabel": {
+    "message": "تعطيل الترجمة بواسطة رمز اللغة"
+  },
+  "ignoredDocumentLangCaptionLabel": {
+    "message": "تعطيل الترجمة إذا كان رمز اللغة من ضمن الرموز في القائمة. أدخل رموز اللغة مفصولة بفاصلة."
+  },
+  "waitTimeLabel": {
+    "message": "انتظر قليلا لترجمة"
+  },
+  "waitTimeCaptionLabel": {
+    "message": "تحديد وقت الانتظار لادخال الاحرف حتي البدء بالترجمة"
+  },
+  "waitTime2CaptionLabel": {
+    "message": "إذا ترجمتها مرات عديدة في وقت قصير ، قد تصبح غير صالحة للاستخدام لفترة من الوقت."
+  },
+  "menuLabel": {
+    "message": "قائمة السياق"
+  },
+  "ifShowMenuLabel": {
+    "message": "إظهار أيقونة قائمة السياق"
+  },
+  "ifShowMenuCaptionLabel": {
+    "message": "إضافة العناصر إلى القائمة التي تظهر عند الضغط زر الفأرة الأيمن على صفحات الويب أو علامة التبويب."
+  },
+  "pageTranslationLabel": {
+    "message": "ترجمة الصفحة"
+  },
+  "pageTranslationOpenToLabel": {
+    "message": "اضغط لعرض نتائج الترجمة"
+  },
+  "pageTranslationOpenToCaptionLabel": {
+    "message": "حدد علامة التبويب لعرض نتائج ترجمة الصفحة."
+  },
+  "newTabLabel": {
+    "message": "علامة تبويب جديدة"
+  },
+  "currentTabLabel": {
+    "message": "التبويب الحالي"
+  },
+  "styleLabel": {
+    "message": "نمط"
+  },
+  "themeLabel": {
+    "message": "السِمة"
+  },
+  "themeCaptionLabel": {
+    "message": "حدد نظام الألوان."
+  },
+  "lightLabel": {
+    "message": "فاتح"
+  },
+  "darkLabel": {
+    "message": "داكن"
+  },
+  "systemLabel": {
+    "message": "النظام"
+  },
+  "buttonStyleLabel": {
+    "message": "زر الترجمة"
+  },
+  "buttonStyleCaptionLabel": {
+    "message": "إختيار تنسيق لوحة الترجمة التي تظهر على المواقع."
+  },
+  "buttonSizeLabel": {
+    "message": "الحجم"
+  },
+  "buttonPositionLabel": {
+    "message": "مكان العرض"
+  },
+  "topRightLabel": {
+    "message": "أعلى اليمين"
+  },
+  "bottomRightLabel": {
+    "message": "أسفل اليمين"
+  },
+  "topLeftLabel": {
+    "message": "فوق على اليسار"
+  },
+  "bottomLeftLabel": {
+    "message": "اسفل على اليسار"
+  },
+  "topLabel": {
+    "message": "أعلى"
+  },
+  "bottomLabel": {
+    "message": "أسفل"
+  },
+  "leftLabel": {
+    "message": "يسار"
+  },
+  "rightLabel": {
+    "message": "يمين"
+  },
+  "positionOffsetLabel": {
+    "message": "عرض الموضع - الإزاحة"
+  },
+  "panelStyleLabel": {
+    "message": "لوحة الترجمة"
+  },
+  "panelStyleCaptionLabel": {
+    "message": "إختيار تنسيق لوحة الترجمة التي تظهر على المواقع."
+  },
+  "widthLabel": {
+    "message": "عرض"
+  },
+  "heightLabel": {
+    "message": "الارتفاع"
+  },
+  "fontSizeLabel": {
+    "message": "حجم الخط"
+  },
+  "referencePointLabel": {
+    "message": "عرض الموضع - النقطة المرجعية"
+  },
+  "bottomSelectedTextLabel": {
+    "message": "أسفل النص المحدد"
+  },
+  "topSelectedTextLabel": {
+    "message": "أعلى النص المحدد"
+  },
+  "clickedPointLabel": {
+    "message": "النقطة المنقورة"
+  },
+  "displayDirectionLabel": {
+    "message": "عرض الموضع - الإتجاه"
+  },
+  "resultFontColorLabel": {
+    "message": "لون خط نتيجة الترجمة"
+  },
+  "isOverrideColorsLabel": {
+    "message": "تجاوز الألوان الافتراضية مع الألوان أدناه"
+  },
+  "candidateFontColorLabel": {
+    "message": "لون خط الترجمة المقترحة"
+  },
+  "bgColorLabel": {
+    "message": "لون الخلفية"
+  },
+  "otherLabel": {
+    "message": "غير ذلك"
+  },
+  "isShowOptionsPageWhenUpdatedLabel": {
+    "message": "عرض صفحة الإعدادات عند التحديث"
+  },
+  "isShowOptionsPageWhenUpdatedCaptionLabel": {
+    "message": "اعرض صفحة الخيارات عندما يتم تحديث الترجمة البسيطة. ليمكنك معرفة محتويات التحديث بسرعة."
+  },
+  "isDebugModeLabel": {
+    "message": "فعل نمط التنقيح"
+  },
+  "isDebugModeCaptionLabel": {
+    "message": "عندما يكون وضع التنقيح مفعل، يخرج السجل إلى المصحح."
+  },
+  "exportSettingsLabel": {
+    "message": "تصدير الإعدادات"
+  },
+  "exportSettingsCaptionLabel": {
+    "message": "حفظ الإعدادات كملف json على الكمبيوتر."
+  },
+  "exportButtonLabel": {
+    "message": "تصدير"
+  },
+  "importSettingsLabel": {
+    "message": "إستيراد الإعدادات"
+  },
+  "importSettingsCaptionLabel": {
+    "message": "تحميل ملف الإعدادات المحفوظة على الكمبيوتَر."
+  },
+  "importButtonLabel": {
+    "message": "إستيراد"
+  },
+  "resetSettingsLabel": {
+    "message": "إستعادة الإعدادات"
+  },
+  "resetSettingsCaptionLabel": {
+    "message": "إستعادة جميع الإعدادات الأولية."
+  },
+  "resetSettingsButtonLabel": {
+    "message": "إعادة"
+  },
+  "shortcutsLabel": {
+    "message": "اختصارات"
+  },
+  "keyboardShortcutsLabel": {
+    "message": "اختصارات لوحة المفاتيح"
+  },
+  "setKeyboardShortCutsMessage": {
+    "message": "حدد اختصارات لوحة المفاتيح."
+  },
+  "typeShortcutMessage": {
+    "message": "اختر اختصار"
+  },
+  "typeLetterMessage": {
+    "message": "اكتب حرف"
+  },
+  "includeModifierKeysMessage": {
+    "message": "أدرج Ctrl أو Alt"
+  },
+  "includeMacModifierKeysMessage": {
+    "message": "أدرج Command, Ctrl أو Alt"
+  },
+  "invalidLetterMessage": {
+    "message": "هذا الحرف لا يمكن إستخدامه"
+  },
+  "invalidShortcutMessage": {
+    "message": "هذا الإختصار لا يمكن إستخدامه"
+  },
+  "clear": {
+    "message": "مسح"
+  },
+  "reset": {
+    "message": "إعادة"
+  },
+  "informationLabel": {
+    "message": "معلومات"
+  },
+  "additionalPermissionLabel": {
+    "message": "تمكين الترجمة على صفحات الويب"
+  },
+  "additionalPermissionCaptionLabel": {
+    "message": "مطلوب أذونات إضافية لاستخدام ترجمة البسيطة على صفحات الويب."
+  },
+  "enableLabel": {
+    "message": "تفعيل"
+  },
+  "backersLabel": {
+    "message": "الداعمون"
+  },
+  "licenseLabel": {
+    "message": "الرخصة"
+  },
+  "donationLabel": {
+    "message": "الرجاء تقديم تبرع"
+  },
+  "donationCaptionLabel": {
+    "message": "شكرا لك لاستخدامك Tab Session Manager.<br> دعمك سوف يكون تشجيع كبير،كما أني اواصل تطوير الخصائص الإضافية.<br>إذا أعجبك Tab Session Manager، سوف أكون مسرورا إذا قدمت تبرعات."
+  },
+  "amazonTitleLabel": {
+    "message": "كروت هدية من amazon.co.jp"
+  },
+  "sponsorsLabel": {
+    "message": "الداعمون للمشروع"
+  },
+  "addonPageLabel": {
+    "message": "صفحة الاضافة"
+  },
+  "extensionPageLabel": {
+    "message": "صفحة الإضافة"
+  },
+  "privacyPolicyLabel": {
+    "message": "سياسة الخصوصية"
+  },
+  "amazonUrl": {
+    "message": "https://www.amazon.co.jp/dp/B004N3APGO?language=en_US"
+  },
+  "addonUrl": {
+    "message": "https://addons.mozilla.org/ar/firefox/addon/simple-translate/?src=optionpage"
+  },
+  "networkError": {
+    "message": "خطأ: تحقق من حالة اتصال الشبكة."
+  },
+  "unavailableError": {
+    "message": "خطأ: وصل الحد الأقصى لاستخدام الخدمة. الرجاء الانتظار بعض الوقت وحاول مرة أخرى."
+  },
+  "deeplAuthError": {
+    "message": "خطأ: فشلت مصادقة DeepL API. يرجى تعيين مفتاح المصادقة والتخطيط بشكل صحيح على صفحة الإعدادات."
+  },
+  "unknownError": {
+    "message": "خطأ: غير معروف"
+  },
+  "translatePageMenu": {
+    "message": "ترجم هذه الصفحة"
+  },
+  "translateTextMenu": {
+    "message": "ترجم النص المحدد"
+  },
+  "translateLinkMenu": {
+    "message": "ترجم الرابط المحدد"
+  },
+  "openPopupDescription": {
+    "message": "فتح شريط الأدوات المنبثق"
+  },
+  "lang_af": {
+    "message": "الأفريكانية"
+  },
+  "lang_sq": {
+    "message": "الألبانية"
+  },
+  "lang_am": {
+    "message": "الأمهرية"
+  },
+  "lang_ar": {
+    "message": "عربى"
+  },
+  "lang_hy": {
+    "message": "الأرميني"
+  },
+  "lang_az": {
+    "message": "أذربيجان"
+  },
+  "lang_eu": {
+    "message": "الباسكي"
+  },
+  "lang_be": {
+    "message": "البيلاروسية"
+  },
+  "lang_bn": {
+    "message": "بنغالي"
+  },
+  "lang_bs": {
+    "message": "البوسنية"
+  },
+  "lang_bg": {
+    "message": "البلغارية"
+  },
+  "lang_ca": {
+    "message": "الكاتالونية"
+  },
+  "lang_ceb": {
+    "message": "السيبيونو"
+  },
+  "lang_ny": {
+    "message": "الشيوا"
+  },
+  "lang_zh_CN": {
+    "message": "الصينية (المبسطة)"
+  },
+  "lang_zh_TW": {
+    "message": "الصينية التقليدية"
+  },
+  "lang_co": {
+    "message": "الكورسيكية"
+  },
+  "lang_hr": {
+    "message": "الكرواتية"
+  },
+  "lang_cs": {
+    "message": "تشيكي"
+  },
+  "lang_da": {
+    "message": "دانماركي"
+  },
+  "lang_nl": {
+    "message": "هولندي"
+  },
+  "lang_en": {
+    "message": "الإنجليزية"
+  },
+  "lang_eo": {
+    "message": "اسبرانتو"
+  },
+  "lang_et": {
+    "message": "الإستونية"
+  },
+  "lang_fi": {
+    "message": "الفنلندية"
+  },
+  "lang_fr": {
+    "message": "الفرنسية"
+  },
+  "lang_fy": {
+    "message": "الفريزية"
+  },
+  "lang_gl": {
+    "message": "الجاليكية"
+  },
+  "lang_ka": {
+    "message": "الجورجية"
+  },
+  "lang_de": {
+    "message": "ألمانية"
+  },
+  "lang_el": {
+    "message": "الإغريقي"
+  },
+  "lang_gu": {
+    "message": "الغوجاراتية"
+  },
+  "lang_ht": {
+    "message": "الهايتية"
+  },
+  "lang_ha": {
+    "message": "الهوسا"
+  },
+  "lang_haw": {
+    "message": "هاواي"
+  },
+  "lang_he": {
+    "message": "العبرية"
+  },
+  "lang_hi": {
+    "message": "الهندية"
+  },
+  "lang_hu": {
+    "message": "الهنغارية"
+  },
+  "lang_is": {
+    "message": "ايسلندي"
+  },
+  "lang_ig": {
+    "message": "الإيغبو"
+  },
+  "lang_id": {
+    "message": "الإندونيسية"
+  },
+  "lang_ga": {
+    "message": "الأيرلندية"
+  },
+  "lang_it": {
+    "message": "الإيطالية"
+  },
+  "lang_ja": {
+    "message": "اليابانية"
+  },
+  "lang_jv": {
+    "message": "الجاوية"
+  },
+  "lang_kn": {
+    "message": "الكانادا"
+  },
+  "lang_kk": {
+    "message": "الكازاخستانية"
+  },
+  "lang_km": {
+    "message": "الخميرية"
+  },
+  "lang_rw": {
+    "message": "الكينياراوندية"
+  },
+  "lang_ky": {
+    "message": "القيرغستانية"
+  },
+  "lang_ko": {
+    "message": "الكورية"
+  },
+  "lang_ku": {
+    "message": "الكردية"
+  },
+  "lang_lo": {
+    "message": "لاوسي"
+  },
+  "lang_la": {
+    "message": "اللاتينية"
+  },
+  "lang_lv": {
+    "message": "اللاتفية"
+  },
+  "lang_lt": {
+    "message": "اللتوانية"
+  },
+  "lang_lb": {
+    "message": "اللوكسمبرجية"
+  },
+  "lang_mk": {
+    "message": "المقدونية"
+  },
+  "lang_mg": {
+    "message": "الملغاشية"
+  },
+  "lang_ms": {
+    "message": "الماليزية"
+  },
+  "lang_ml": {
+    "message": "المالايلامية"
+  },
+  "lang_mt": {
+    "message": "المالطية"
+  },
+  "lang_mi": {
+    "message": "الماورية"
+  },
+  "lang_mr": {
+    "message": "الماراثية"
+  },
+  "lang_mn": {
+    "message": "المنغولية"
+  },
+  "lang_hmn": {
+    "message": "ﺫﻮﻌﺸﻣ"
+  },
+  "lang_my": {
+    "message": "ميانمار"
+  },
+  "lang_ne": {
+    "message": "النبالية"
+  },
+  "lang_no": {
+    "message": "النرويجية"
+  },
+  "lang_nb": {
+    "message": "النرويجية (bokmål)"
+  },
+  "lang_or": {
+    "message": "Odia (Oriya)"
+  },
+  "lang_fa": {
+    "message": "الفارسية"
+  },
+  "lang_pl": {
+    "message": "البولندية"
+  },
+  "lang_pt": {
+    "message": "البرتغالية"
+  },
+  "lang_pa": {
+    "message": "البنجابية"
+  },
+  "lang_ps": {
+    "message": "البشتونية"
+  },
+  "lang_ro": {
+    "message": "الرومانية"
+  },
+  "lang_ru": {
+    "message": "الروسية"
+  },
+  "lang_sm": {
+    "message": "الساموائية"
+  },
+  "lang_gd": {
+    "message": "الغيلية الأسكتلندية"
+  },
+  "lang_sr": {
+    "message": "الصربية"
+  },
+  "lang_st": {
+    "message": "السوثوية"
+  },
+  "lang_sn": {
+    "message": "الشونا"
+  },
+  "lang_sd": {
+    "message": "السندية"
+  },
+  "lang_si": {
+    "message": "السنهالية"
+  },
+  "lang_sk": {
+    "message": "السلوفاكية"
+  },
+  "lang_sl": {
+    "message": "سلوفيني"
+  },
+  "lang_so": {
+    "message": "الصومالية"
+  },
+  "lang_es": {
+    "message": "الأسبانية"
+  },
+  "lang_su": {
+    "message": "السودانية"
+  },
+  "lang_sw": {
+    "message": "السواحلية"
+  },
+  "lang_sv": {
+    "message": "السويدية"
+  },
+  "lang_tl": {
+    "message": "التغالوغ"
+  },
+  "lang_tg": {
+    "message": "طاجيكي"
+  },
+  "lang_ta": {
+    "message": "التاميل"
+  },
+  "lang_tt": {
+    "message": "التتارية"
+  },
+  "lang_te": {
+    "message": "التيلجو"
+  },
+  "lang_th": {
+    "message": "التايلاندية"
+  },
+  "lang_tr": {
+    "message": "التركية"
+  },
+  "lang_tk": {
+    "message": "التركمانية"
+  },
+  "lang_uk": {
+    "message": "الأوكراني"
+  },
+  "lang_ur": {
+    "message": "الأردية"
+  },
+  "lang_ug": {
+    "message": "الأويغورية"
+  },
+  "lang_uz": {
+    "message": "الأوزبكي"
+  },
+  "lang_vi": {
+    "message": "الفيتنامية"
+  },
+  "lang_cy": {
+    "message": "الولزية"
+  },
+  "lang_xh": {
+    "message": "كوسا"
+  },
+  "lang_yi": {
+    "message": "اليديشية"
+  },
+  "lang_yo": {
+    "message": "اليوروبا"
+  },
+  "lang_zu": {
+    "message": "الزولو"
+  },
+  "lang_en_US": {
+    "message": "الإنكليزية (أمريكية)"
+  },
+  "lang_en_GB": {
+    "message": "الإنجليزية (البريطانية)"
+  },
+  "lang_pt_PT": {
+    "message": "البرتغالية"
+  },
+  "lang_pt_BR": {
+    "message": "البرتغالية (البرازيلة)"
+  },
+  "lang_zh": {
+    "message": "الصينية"
+  }
+}

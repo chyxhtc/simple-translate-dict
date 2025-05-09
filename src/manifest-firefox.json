@@ -1,13 +1,19 @@
 {
-  "manifest_version": 2,
-  "version": "0.1.0",
+  "manifest_version": 3,
+  "version": "3.0.1",
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "default_locale": "en",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "simple-translate@sienori"
+    }
+  },
   "permissions": [
-    "<all_urls>",
     "storage",
-    "contextMenus",
+    "contextMenus"
+  ],
+  "host_permissions": [
     "https://api.dictionaryapi.dev/*",
     "https://translate.google.com/*",
     "https://translate.googleapis.com/*",
@@ -34,9 +40,10 @@
   "background": {
     "scripts": [
       "background/background.js"
-    ]
+    ],
+    "type": "module"
   },
-  "browser_action": {
+  "action": {
     "default_icon": {
       "512": "icons/512.png",
       "128": "icons/128.png",
@@ -67,31 +74,27 @@
     }
   ],
   "web_accessible_resources": [
-    "icons/512.png"
+    {
+      "resources": [
+        "icons/512.png"
+      ],
+      "matches": [
+        "*://*/*"
+      ]
+    }
   ],
   "commands": {
-    "_execute_browser_action": {
-      "description": "__MSG_openPopupDescription__",
-      "suggested_key": {
-        "default": "Ctrl+Shift+Space"
-      }
+    "_execute_action": {
+      "description": "__MSG_openPopupDescription__"
     },
     "translateSelectedText": {
-      "description": "__MSG_translateTextMenu__",
-      "suggested_key": {
-        "default": "Ctrl+Space"
-      }
+      "description": "__MSG_translateTextMenu__"
     },
     "translatePage": {
       "description": "__MSG_translatePageMenu__"
-    },
-    "lookupDictionary": {
-      "description": "__MSG_lookupDictionaryMenu__"
     }
   },
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "simple-translate-dict@chyxhtc.github.io"
-    }
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; media-src 'self' https://translate.google.com https://api.dictionaryapi.dev https://code.responsivevoice.org https://dictionary.yandex.net https://translate.googleapis.com https://*.forvo.com https://*.dictionary.com https://*.cambridge.org https://howjsay.com https://*.oxforddictionaries.com https://ssl.gstatic.com"
   }
 }

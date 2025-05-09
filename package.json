@@ -1,6 +1,6 @@
 {
-  "name": "simple-translate-dict",
-  "version": "0.1.0",
+  "name": "simple-translate",
+  "version": "0.0.0",
   "dependencies": {
     "browser-info": "^1.2.0",
     "loglevel": "^1.6.1",
@@ -46,21 +46,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chyxhtc/simple-translate-dict.git"
+    "url": "git+https://github.com/sienori/simple-translate.git"
   },
-  "author": "chyxhtc",
+  "author": "Sienori",
   "license": "MPL-2.0",
-  "description": "一个包含字典功能的简单翻译扩展。",
+  "description": "A simple and powerful WebExtensions for translating pages and text.",
   "bugs": {
-    "url": "https://github.com/chyxhtc/simple-translate-dict/issues"
+    "url": "https://github.com/sienori/simple-translate/issues"
   },
-  "homepage": "https://github.com/chyxhtc/simple-translate-dict#readme",
-  "main": "src/manifest.json",
+  "homepage": "https://github.com/sienori/simple-translate#readme",
+  "main": ".src/manifest.json",
   "keywords": [
     "webextensions",
     "firefox",
-    "chrome",
-    "dictionary",
-    "pronunciation"
+    "chrome"
   ]
 }

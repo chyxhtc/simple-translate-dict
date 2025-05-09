@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "0.1.0",
+  "version": "3.0.1",
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "default_locale": "en",
@@ -94,9 +94,6 @@
     },
     "translatePage": {
       "description": "__MSG_translatePageMenu__"
-    },
-    "lookupDictionary": {
-      "description": "__MSG_lookupDictionaryMenu__"
     }
   }
 }
