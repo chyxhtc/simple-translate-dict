@@ -16,14 +16,21 @@ https://github.com/sienori/simple-translate
 ## 新增功能页面
 
  > 目前仅自用，未解决字典查询依赖 API KEY 的问题。
-> 
+ > 需要去 https://yandex.com/dev/dictionary 申请 API_KEY
+
+
+##### Yandex API_KEY 设置
+
+<img src="https://github.com/user-attachments/assets/b4c045dc-3bdc-4222-aa00-a03a9abd66e3" width="400" />
+
 ##### 原始翻译功能
 
-  <img src="https://github.com/user-attachments/assets/36342d01-73c9-4f71-8b5e-cc1103bb59ed"  width="300" />
+  <img src="https://github.com/user-attachments/assets/36342d01-73c9-4f71-8b5e-cc1103bb59ed" width="300" />
 
 ##### 新增字典查询与发音
 
-  <img src="https://github.com/user-attachments/assets/d7c4709b-b8b8-4ab7-9d40-5c7a64be172f"  width="300" />
+  <img src="https://github.com/user-attachments/assets/d7c4709b-b8b8-4ab7-9d40-5c7a64be172f" width="300" />
+
 
  
 
