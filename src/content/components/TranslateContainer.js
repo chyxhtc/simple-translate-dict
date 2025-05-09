@@ -7,13 +7,6 @@ import "../styles/TranslateContainer.scss";
 
 const translateText = async (text, targetLang = getSettings("targetLang")) => {
   try {
-    console.debug("TranslateContainer 发送翻译请求:", {
-      text,
-      targetLang,
-      needPhonetic: true,
-      stack: new Error().stack
-    });
-    
     const result = await browser.runtime.sendMessage({
       message: 'translate',
       text: text,
@@ -22,7 +15,6 @@ const translateText = async (text, targetLang = getSettings("targetLang")) => {
       needPhonetic: true
     });
     
-    console.debug("TranslateContainer 收到翻译响应:", result);
     return result;
   } catch (error) {
     console.error("TranslateContainer 翻译出错:", error);
@@ -157,19 +149,6 @@ export default class TranslateContainer extends Component {
           dictData = null;
         }
       }
-
-      console.debug("已提取词典数据:", dictData);
-      console.debug("词典数据详情:", {
-        hasData: Boolean(dictData),
-        ipa: result.ipa,
-        ipaType: typeof result.ipa,
-        definitions: result.definitions,
-        definitionsType: typeof result.definitions,
-        definitionsIsArray: Array.isArray(result.definitions),
-        synonyms: result.synonyms,
-        tts: result.tts,
-        resultKeys: Object.keys(result)
-      });
 
       this.setState({
         shouldShowPanel: true,

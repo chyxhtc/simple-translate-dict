@@ -1,6 +1,6 @@
 import browser from "webextension-polyfill";
 import log from "loglevel";
-import { initSettings, handleSettingsChange } from "src/settings/settings";
+import { initSettings, handleSettingsChange, getSettings } from "src/settings/settings";
 import { updateLogLevel, overWriteLogLevel } from "src/common/log";
 import onInstalledListener from "./onInstalledListener";
 import { showMenus, onMenusShownListener, onMenusClickedListener } from "./menus";
@@ -17,14 +17,6 @@ browser.commands.onCommand.addListener(onCommandListener);
 const pendingRequests = new Map();
 
 browser.runtime.onMessage.addListener((request, sender) => {
-  console.debug("收到消息:", {
-    message: request.message,
-    text: request.text,
-    needPhonetic: request.needPhonetic,
-    phoneticOnly: request.phoneticOnly,
-    sender: sender
-  });
-
   if (request.message === "translate") {
     return (async () => {
       try {
@@ -33,7 +25,6 @@ browser.runtime.onMessage.addListener((request, sender) => {
         
         // 检查是否有相同的请求正在处理中
         if (pendingRequests.has(requestId)) {
-          console.debug("发现重复请求，使用现有请求:", requestId);
           return pendingRequests.get(requestId);
         }
         
@@ -43,10 +34,8 @@ browser.runtime.onMessage.addListener((request, sender) => {
           
           // 如果只需要音标数据，不进行翻译
           if (!request.phoneticOnly) {
-            console.debug("开始处理翻译请求");
             translationResult = await translate(request.text, request.sourceLang, request.targetLang);
           } else {
-            console.debug("仅请求音标数据，跳过翻译步骤");
             translationResult = {
               resultText: "",
               sourceLanguage: request.sourceLang || "auto",
@@ -60,20 +49,15 @@ browser.runtime.onMessage.addListener((request, sender) => {
           
           // 判断是否为单词
           const isSingleWord = request.text.trim().split(/\s+/).length === 1;
-          console.debug("是否为单词:", isSingleWord);
           
           if ((request.needPhonetic || request.phoneticOnly) && isSingleWord) {
-            console.debug("开始获取音标");
             phonetic = await getPhonetic(request.text.trim());
-            console.debug("音标获取完成:", phonetic);
-            console.debug("音标数据类型:", typeof phonetic, "ipa数据类型:", typeof phonetic?.ipa);
           }
           
           const result = {
             ...translationResult,
             ...(phonetic || {})
           };
-          console.debug("返回结果:", result);
           
           // 请求完成后，从Map中移除
           setTimeout(() => {
@@ -120,11 +104,17 @@ init();
 
 const getPhonetic = async (text) => {
   try {
+    // 从设置中获取 API Key
+    const apiKey = getSettings("yandexDictionaryApiKey");
+    
+    // 如果没有设置 API Key，则直接返回 null
+    if (!apiKey) {
+      return null;
+    }
+    
     const url = `https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=${apiKey}&lang=en-en&text=${encodeURIComponent(text.trim())}`;
-    console.debug("发送 Yandex Dictionary 请求:", url);
     
     const response = await fetch(url);
-    console.debug("Yandex API 状态码:", response.status);
     
     if (!response.ok) {
       const errorText = await response.text();
@@ -133,10 +123,8 @@ const getPhonetic = async (text) => {
     }
     
     const data = await response.json();
-    console.debug("Yandex API 返回原始数据:", JSON.stringify(data, null, 2));
     
     if (!data || !data.def || data.def.length === 0) {
-      console.debug("未找到词典数据");
       return null;
     }
 
@@ -209,11 +197,9 @@ const getPhonetic = async (text) => {
 
     // 检查至少有一个非空值
     if (!result.ipa && !result.definitions && !result.synonyms) {
-      console.debug("处理后没有有效的词典数据");
       return null;
     }
 
-    console.debug("词典处理后的数据:", JSON.stringify(result, null, 2));
     return result;
   } catch (error) {
     console.error("获取词典数据时出错:", error);
