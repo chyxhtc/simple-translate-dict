@@ -189,7 +189,6 @@ export default class TranslatePanel extends Component {
     const dictionary = content?.querySelector('.simple-translate-dictionary');
     if (dictionary && this.state.isDictExpanded) {
       dictionaryHeight = dictionary.scrollHeight;
-      console.debug("词典高度:", dictionaryHeight);
     }
     
     // 调整最大高度，考虑词典内容
@@ -203,17 +202,6 @@ export default class TranslatePanel extends Component {
     // 如果内容高度超过调整后的最大高度，启用滚动
     const isOverflow = contentHeight > adaptedMaxHeight;
     const wrapperHeight = isOverflow ? adaptedMaxHeight : contentHeight;
-    
-    console.debug("计算面板大小:", {
-      contentHeight,
-      dictionaryHeight,
-      maxHeight,
-      adaptedMaxHeight,
-      isOverflow,
-      wrapperHeight,
-      wrapperWidth,
-      screenHeight: window.innerHeight
-    });
     
     return { 
       panelWidth: wrapperWidth, 
@@ -291,16 +279,11 @@ export default class TranslatePanel extends Component {
     // 处理词典数据可用性变化
     if ((prevState.isDictDataAvailable !== this.state.isDictDataAvailable) || 
         (prevState.dictData !== this.state.dictData && this.state.dictData !== null)) {
-      console.debug("词典数据变化，将重新计算大小");
       this.setState({ shouldResize: true });
     }
 
     // 处理传入的dictData变化
     if (this.props.dictData !== prevProps.dictData) {
-      console.debug("传入词典数据发生变化", {
-        prev: prevProps.dictData,
-        current: this.props.dictData
-      });
       
       if (this.props.dictData) {
         // 验证数据是否有效
@@ -323,17 +306,10 @@ export default class TranslatePanel extends Component {
   }
 
   loadDictData = async () => {
-    console.debug("loadDictData 被调用");
     if (this.state.isLoadingDict) {
-      console.debug("正在加载中，跳过");
       return;
     }
 
-    console.debug("开始加载词典数据，当前状态:", {
-      isLoadingDict: this.state.isLoadingDict,
-      selectedText: this.props.selectedText
-    });
-    
     this.setState({
       isLoadingDict: true,
       dictData: null
@@ -342,7 +318,6 @@ export default class TranslatePanel extends Component {
     try {
       // 检查是否已经有词典数据
       if (this.props.dictData) {
-        console.debug("使用已有的词典数据");
         this.setState({
           dictData: this.props.dictData,
           isLoadingDict: false,
@@ -357,7 +332,6 @@ export default class TranslatePanel extends Component {
       // 检查是否已经有翻译结果中包含词典数据
       if (this.props.resultText && (typeof this.props.resultText === 'object') && 
          (this.props.resultText.ipa || this.props.resultText.definitions)) {
-        console.debug("从翻译结果中提取词典数据");
         const newDictData = {
           ipa: this.props.resultText.ipa,
           definitions: this.props.resultText.definitions,
@@ -365,7 +339,6 @@ export default class TranslatePanel extends Component {
           tts: this.props.resultText.tts,
           word: this.props.selectedText
         };
-        console.debug("提取的词典数据:", JSON.stringify(newDictData, null, 2));
         
         // 验证数据是否有效（至少有音标或释义或同义词）
         const hasValidData = 
@@ -386,7 +359,6 @@ export default class TranslatePanel extends Component {
 
       // 如果没有已有数据，发送请求获取
       if (this.props.selectedText && this.props.selectedText.trim()) {
-        console.debug("发送请求获取词典数据");
         
         // 获取单词
         const word = this.props.selectedText.trim();
@@ -397,8 +369,6 @@ export default class TranslatePanel extends Component {
             type: "getWordDetails",
             word: word
           });
-          
-          console.debug("收到词典数据:", response);
           
           if (response && (
               (response.ipa && typeof response.ipa === 'string') || 
@@ -417,7 +387,6 @@ export default class TranslatePanel extends Component {
               isDictExpanded: true // 确保展开状态
             });
           } else {
-            console.debug("词典数据无效或为空");
             this.setState({
               isLoadingDict: false,
               isLoadingPhonetic: false,
@@ -471,7 +440,6 @@ export default class TranslatePanel extends Component {
       // 设置一个较短的超时，因为我们知道可能会失败
       this.audioTimeout = setTimeout(() => {
         if (this.state.isPlayingAudio) {
-          console.debug("尝试使用非跨域音频方式");
           this.playAudioUsingHack();
         }
       }, 1500);
@@ -485,10 +453,8 @@ export default class TranslatePanel extends Component {
       audio.onloadeddata = () => {
         audio.play()
           .then(() => {
-            console.debug("音频播放成功");
           })
           .catch(error => {
-            console.error("主音频播放出错:", error);
             this.playAudioUsingHack();
           });
       };
@@ -504,11 +470,9 @@ export default class TranslatePanel extends Component {
       
       // 在设置src之前添加事件处理器
       audio.src = this.state.dictData.tts;
-      console.debug("尝试播放主发音:", this.state.dictData.tts);
       
       this.setState({ audio });
     } catch (error) {
-      console.error("创建音频对象时出错:", error);
       this.playAudioUsingHack();
     }
   };
@@ -547,11 +511,9 @@ export default class TranslatePanel extends Component {
         audioElement.onerror = () => {
           currentSourceIndex++;
           if (currentSourceIndex < sources.length) {
-            console.debug(`尝试备用音源 ${currentSourceIndex+1}:`, sources[currentSourceIndex]);
             audioElement.src = sources[currentSourceIndex];
             audioElement.load();
           } else {
-            console.debug("所有音源都失败，显示网站链接");
             document.body.removeChild(audioElement);
             this.setState({ isPlayingAudio: false, audioError: true });
           }
@@ -565,16 +527,13 @@ export default class TranslatePanel extends Component {
         audioElement.onloadeddata = () => {
           audioElement.play()
             .then(() => {
-              console.debug("成功播放音频:", sources[currentSourceIndex]);
             })
             .catch(error => {
-              console.error("播放失败:", error);
               document.body.removeChild(audioElement);
               this.setState({ isPlayingAudio: false, audioError: true });
             });
         };
         
-        console.debug("尝试轻量级音频源:", sources[0]);
         audioElement.src = sources[0];
         audioElement.load();
         
@@ -698,8 +657,6 @@ export default class TranslatePanel extends Component {
       }
     }
     
-    console.debug("点击加载按钮，获取词典数据");
-    
     // 使用更长的延迟避免事件冒泡问题
     setTimeout(() => {
       // 检查面板是否仍处于显示状态
@@ -735,21 +692,6 @@ export default class TranslatePanel extends Component {
       isLoadingDict, isDictExpanded, dictData, isDictDataAvailable, 
       isPlayingAudio, audioError, showPhonetic, isLoadingPhonetic, hasLoadedPhonetic 
     } = this.state;
-    
-    console.debug("渲染时的状态:", {
-      isSingleWord: selectedText ? selectedText.trim().split(/\s+/).length === 1 : false,
-      isLoadingDict: this.state.isLoadingDict,
-      dictData: this.state.dictData,
-      propsDictData: this.props.dictData,
-      dictDataExists: Boolean(this.state.dictData),
-      hasIpa: this.state.dictData?.ipa,
-      ipaType: typeof this.state.dictData?.ipa,
-      hasDefinitions: this.state.dictData?.definitions?.length > 0,
-      hasSynonyms: this.state.dictData?.synonyms?.length > 0,
-      isDictDataRender: Boolean(this.state.dictData && (this.state.dictData.ipa || 
-        (this.state.dictData.definitions && this.state.dictData.definitions.length > 0) || 
-        (this.state.dictData.synonyms && this.state.dictData.synonyms.length > 0)))
-    });
     
     // 判断是否为单词
     const isSingleWord = selectedText.trim().split(/\s+/).length === 1;

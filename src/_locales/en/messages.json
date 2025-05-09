@@ -814,5 +814,11 @@
   },
   "lang_zh": {
     "message": "Chinese"
+  },
+  "yandexDictionaryApiKeyLabel": {
+    "message": "Yandex Dictionary API Key"
+  },
+  "yandexDictionaryApiKeyCaptionLabel": {
+    "message": "Enter your Yandex Dictionary API key for dictionary lookup functionality."
   }
 }

@@ -115,6 +115,15 @@ export default [
             default: "",
             placeholder: "00000000-0000-0000-0000-00000000000000:fx",
             shouldShow: () => (getSettings("translationApi") === "deepl"),
+          },
+          {
+            id: "yandexDictionaryApiKey",
+            title: "yandexDictionaryApiKeyLabel",
+            captions: ["yandexDictionaryApiKeyCaptionLabel"],
+            type: "text",
+            default: "",
+            placeholder: "输入 Yandex Dictionary API 密钥",
+            shouldShow: () => true
           }
         ]
       },

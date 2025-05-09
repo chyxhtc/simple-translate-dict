@@ -814,5 +814,11 @@
   },
   "lang_zh": {
     "message": "中文"
+  },
+  "yandexDictionaryApiKeyLabel": {
+    "message": "Yandex 词典 API 密钥"
+  },
+  "yandexDictionaryApiKeyCaptionLabel": {
+    "message": "输入 Yandex 词典 API 密钥以实现词典查询功能。"
   }
 }
